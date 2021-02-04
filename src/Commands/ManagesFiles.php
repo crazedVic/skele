@@ -26,9 +26,11 @@ trait ManagesFiles
             if ($fileDir = implode(DIRECTORY_SEPARATOR , array_slice(explode(DIRECTORY_SEPARATOR , $filePath), 0, -1))) {
                 $this->filesystem()->ensureDirectoryExists($fileDir);
             }
-
-            $this->filesystem()->put($filePath, $this->replace($replaces, $file->getContents()));
-            $this->warn('Created file: <info>' . $filePath . '</info>');
+            // prevent override by default
+            if (!$this->filesystem()->exists($filepath)) {
+                $this->filesystem()->put($filePath, $this->replace($replaces, $file->getContents()));
+                $this->warn('Created file: <info>' . $filePath . '</info>');
+            }
         }
     }
 
