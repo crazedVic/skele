@@ -37,7 +37,7 @@ trait ManagesFiles
         }
     }
     
-    protected function appendFiles($stubFolder, $replaces=[], $file, $string)
+    protected function updateFile($stubFolder, $replaces=[], $file, $string)
     {
         $filePath = Str::replaceLast('.stub', '', $this->replace($replaces, $file->getRelativePathname()));
 
