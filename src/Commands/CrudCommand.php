@@ -24,7 +24,7 @@ class CrudCommand extends Command
         else {
             $modelParser = new ComponentParser('App\\Models', resource_path('views'), $this->argument('class'));
             $modelTitles = Str::plural(preg_replace('/(.)(?=[A-Z])/u', '$1 ', $modelParser->className()));
-            $componentClass = Str::replaceLast($modelParser->className(), Str::studly($modelTitles), $this->argument('class'));
+            $componentClass = Str::replaceLast((string)$modelParser->className(), Str::studly($modelTitles), $this->argument('class'));
             $componentParser = new ComponentParser('App\\Components', resource_path('views'), $componentClass);
 
             $this->createFiles('crud', [
