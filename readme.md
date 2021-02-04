@@ -1,6 +1,10 @@
 # Skele - Unopinionated
 
-Rapid Laravel Livewire + TailwindCSS app development package.
+Rapid Laravel app development package.
+
+To keep this package light and easy to integrate, please ensure you have livewire and tailwindcss installed.
+- [TailwindCSS](https://tailwindcss.com/docs/guides/laravel)
+- [Laravel Liveware](https://laravel-livewire.com/docs/2.x/installation)
 
 #### Requirements
 
@@ -35,6 +39,10 @@ Configure your `.env` app, database, and mail values:
     APP_*
     DB_*
     MAIL_*
+
+Install Livewire and Tailwind
+
+    see above.
 
 Require Skele via composer:
 
