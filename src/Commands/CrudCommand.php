@@ -28,8 +28,8 @@ class CrudCommand extends Command
             $componentParser = new ComponentParser('App\\Components', resource_path('views'), $componentClass);
 
             $this->createFiles('crud', [
-                'app/Components/DummyModels' => str_replace('.php', '', $componentParser->relativeClassPath()),
-                'resources/views/DummyViews' => str_replace('.blade.php', '', $componentParser->relativeViewPath()),
+                'app'. DIRECTORY_SEPARATOR.'Components'. DIRECTORY_SEPARATOR.'DummyModels' => str_replace('.php', '', $componentParser->relativeClassPath()),
+                'resources'. DIRECTORY_SEPARATOR.'views'. DIRECTORY_SEPARATOR.'DummyViews' => str_replace('.blade.php', '', $componentParser->relativeViewPath()),
                 'DummyComponentNamespace' => $componentParser->classNamespace() . '\\' . $componentParser->className(),
                 'DummyModelNamespace' => $modelParser->classNamespace(),
                 'DummyModelVariables' => Str::camel($modelTitles),
