@@ -24,7 +24,7 @@ class InstallCommand extends Command
 
         Artisan::call('skele:migrate', [], $this->getOutput());
 
-        //exec('npm install');
+        exec('php artisan livewire:publish --config');
         //exec('npm install tailwindcss@latest postcss@latest autoprefixer@latest @tailwindcss/forms -D');
         //exec('npm run dev');
 
