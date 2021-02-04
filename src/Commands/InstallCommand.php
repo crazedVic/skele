@@ -24,10 +24,11 @@ class InstallCommand extends Command
 
         Artisan::call('skele:migrate', [], $this->getOutput());
 
-        exec('npm install');
-        exec('npm install tailwindcss@latest postcss@latest autoprefixer@latest @tailwindcss/forms -D');
-        exec('npm run dev');
+        //exec('npm install');
+        //exec('npm install tailwindcss@latest postcss@latest autoprefixer@latest @tailwindcss/forms -D');
+        //exec('npm run dev');
 
         $this->info('Installation complete! <href=' . config('app.url') . '>' . config('app.url') . '</>');
+        $this->info('Remember to run npm install && npm run dev');
     }
 }
