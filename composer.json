@@ -8,6 +8,11 @@
             "name": "Kevin Dion",
             "email": "redbastie@icloud.com",
             "role": "Developer"
+        },
+        {
+            "name": "Victor Rubba",
+            "email": "vrubba@gmail.com",
+            "role": "Developer"
         }
     ],
     "require": {
