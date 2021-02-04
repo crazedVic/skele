@@ -36,6 +36,21 @@ trait ManagesFiles
             }
         }
     }
+    
+    protected function appendFiles($stubFolder, $replaces=[], $file, $string)
+    {
+        $filePath = Str::replaceLast('.stub', '', $this->replace($replaces, $file->getRelativePathname()));
+
+        // make sure file exists
+        if (!$this->filesystem()->exists($filePath)) {
+            $this->filesystem()->append($filePath, $this->replace($replaces, $file->getContents()));
+            $this->info('Updated file: <info>' . $filePath . '</info>');
+        }
+        else{
+             $this->error('Unable to find file: <info>' . $filePath . '</info>. File was not updated.');
+        }
+        
+    }
 
     protected function deleteFiles($filePaths)
     {
