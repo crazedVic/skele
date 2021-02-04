@@ -13,20 +13,20 @@ class InstallCommand extends Command
 
     public function handle()
     {
-        $this->createFiles('install', [
-            'DummyAppName' => config('app.name'),
-        ]);
+//         $this->createFiles('install', [
+//             'DummyAppName' => config('app.name'),
+//         ]);
 
-        $this->deleteFiles([
-            'database/migrations/2014_10_12_000000_create_users_table.php',
-            'resources/views/welcome.blade.php',
-        ]);
+//         $this->deleteFiles([
+//             'database/migrations/2014_10_12_000000_create_users_table.php',
+//             'resources/views/welcome.blade.php',
+//         ]);
 
-        Artisan::call('skele:migrate', [], $this->getOutput());
+//         Artisan::call('skele:migrate', [], $this->getOutput());
 
-        exec('npm install');
-        exec('npm install tailwindcss@latest postcss@latest autoprefixer@latest @tailwindcss/forms -D');
-        exec('npm run dev');
+//         exec('npm install');
+//         exec('npm install tailwindcss@latest postcss@latest autoprefixer@latest @tailwindcss/forms -D');
+//         exec('npm run dev');
 
         $this->info('Installation complete! <href=' . config('app.url') . '>' . config('app.url') . '</>');
     }
