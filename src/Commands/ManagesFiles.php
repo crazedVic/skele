@@ -27,7 +27,7 @@ trait ManagesFiles
                 $this->filesystem()->ensureDirectoryExists($fileDir);
             }
             // prevent override by default
-            if (!$this->filesystem()->exists($filepath)) {
+            if (!$this->filesystem()->exists($filePath)) {
                 $this->filesystem()->put($filePath, $this->replace($replaces, $file->getContents()));
                 $this->info('Created file: <info>' . $filePath . '</info>');
             }
