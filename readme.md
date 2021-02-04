@@ -1,10 +1,4 @@
-# NO LONGER MAINTAINED
-
-This package is no longer maintained. Please consider my latest package here: https://github.com/redbastie/tailwire
-
------
-
-# Skele
+# Skele - Unopinionated
 
 Rapid Laravel Livewire + TailwindCSS app development package.
 
@@ -13,22 +7,20 @@ Rapid Laravel Livewire + TailwindCSS app development package.
 #### Requirements
 
 - Laravel 8
+- PHP 7.4
 - NPM
 
 #### Packages Used
 
-- [Laravel Livewire](https://github.com/livewire/livewire)
 - [Laravel Timezone](https://github.com/jamesmills/laravel-timezone)
 - [Doctrine DBAL](https://github.com/doctrine/dbal)
 - [Honey](https://github.com/lukeraymonddowning/honey)
-- [TailwindCSS](https://github.com/tailwindlabs/tailwindcss)
 - [Blade Heroicons](https://github.com/blade-ui-kit/blade-heroicons)
 
 #### Features
 
 - Rapid scaffolding commands (auth, components, CRUD, models)
 - Automatic routing, migrations, timezones, & password hashing
-- Pre-configured TailwindCSS via webpack
 - Bare-bones blade views, ready for you to customize
 - PWA integration (icons, manifest, swipe down refresh)
 - Infinite scrolling & modal toggle support
