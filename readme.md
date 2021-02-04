@@ -44,6 +44,8 @@ Install Livewire and Tailwind
 
     composer require livewire/livewire
     php artisan livewire:publish --config
+    
+    npm install tailwindcss@latest postcss@latest autoprefixer@latest @tailwindcss/forms -D
 
 Require Skele via composer:
 
