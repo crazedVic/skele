@@ -42,7 +42,8 @@ Configure your `.env` app, database, and mail values:
 
 Install Livewire and Tailwind
 
-    see above.
+    composer require livewire/livewire
+    php artisan livewire:publish --config
 
 Require Skele via composer:
 
