@@ -26,8 +26,8 @@ class ComponentCommand extends Command
         }
 
         $this->createFiles($stubFolder, [
-            'app/Components/DummyComponent.php.stub' => $componentParser->relativeClassPath(),
-            'resources/views/DummyView.blade.php.stub' => $componentParser->relativeViewPath(),
+            'app'. DIRECTORY_SEPARATOR . 'Components'. DIRECTORY_SEPARATOR.'DummyComponent.php.stub' => $componentParser->relativeClassPath(),
+            'resources' . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR .'DummyView.blade.php.stub' => $componentParser->relativeViewPath(),
             'DummyComponentNamespace' => $componentParser->classNamespace(),
             'DummyComponent' => $componentParser->className(),
             'DummyRouteUri' => $dummyRouteUri = str_replace('.', '/', $componentParser->viewName()),
