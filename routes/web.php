@@ -7,11 +7,15 @@ Route::middleware('web')->group(function () {
     $filesystem = new Filesystem;
 
     // instead of having hardcoded paths, we should grab these values from config/livewire.php
-    if (!$filesystem->exists(app_path('config'). '/livewire.php'){
+    if (!$filesystem->exists(config_path('livewire.php'))){
         error_log('config/livewire.php not found, please publish livewire config to enable automatic routing');
         return;
     }
-    if ($filesystem->exists($dir = app_path('Components'))) {
+    
+    $component_path = config.get('livewire.class_namespace'); // todo: need to convert namespace to filepath!
+    $view_path = config.get('livewire.view_path');
+    
+    if ($filesystem->exists($dir = $component_path)) {
         foreach ($filesystem->allFiles($dir) as $file) {
             $namespace = 'App\\Components\\' . str_replace(['/', '.php'], ['\\', ''], $file->getRelativePathname());
             $class = app($namespace);
