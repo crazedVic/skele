@@ -13,7 +13,7 @@ Route::middleware('web')->group(function () {
     }
     
     $component_path = config.get('livewire.class_namespace'); // todo: need to convert namespace to filepath!
-    $view_path = config.get('livewire.view_path');
+
     
     if ($filesystem->exists($dir = $component_path)) {
         foreach ($filesystem->allFiles($dir) as $file) {
