@@ -12,12 +12,12 @@ Route::middleware('web')->group(function () {
         return;
     }
     
-    $component_path = config.get('livewire.class_namespace'); // todo: need to convert namespace to filepath!
+    $component_namespace = config.get('livewire.class_namespace'); // todo: need to convert namespace to filepath!
 
     
     if ($filesystem->exists($dir = $component_path)) {
         foreach ($filesystem->allFiles($dir) as $file) {
-            $namespace = 'App\\Components\\' . str_replace(['/', '.php'], ['\\', ''], $file->getRelativePathname());
+            $namespace = $component_namespace . str_replace(['/', '.php'], ['\\', ''], $file->getRelativePathname());
             $class = app($namespace);
 
             if (property_exists($class, 'routeUri') && $class->routeUri) {
