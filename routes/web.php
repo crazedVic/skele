@@ -6,6 +6,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('web')->group(function () {
     $filesystem = new Filesystem;
 
+    // instead of having hardcoded paths, we should grab these values from config/livewire.php
+    if (!$filesystem->exists(app_path('config'). '/livewire.php'){
+        error_log('config/livewire.php not found, please publish livewire config to enable automatic routing');
+        return;
+    }
     if ($filesystem->exists($dir = app_path('Components'))) {
         foreach ($filesystem->allFiles($dir) as $file) {
             $namespace = 'App\\Components\\' . str_replace(['/', '.php'], ['\\', ''], $file->getRelativePathname());
