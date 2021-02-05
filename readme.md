@@ -24,9 +24,7 @@ To keep this package light and easy to integrate, please ensure you have livewir
 - Rapid scaffolding commands (auth, components, CRUD, models)
 - Automatic routing, migrations, timezones, & password hashing
 - Bare-bones blade views, ready for you to customize
-- PWA integration (icons, manifest, swipe down refresh)
 - Infinite scrolling & modal toggle support
-- & more
 
 ## Installation
 
